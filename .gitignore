@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+.idea/
+.venv/
+poetry.lock
+__pycache__/
+*.pyc
+.coverage

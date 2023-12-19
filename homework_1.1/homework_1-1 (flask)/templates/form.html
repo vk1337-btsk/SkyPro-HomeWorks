@@ -1,0 +1,355 @@
+<! -- Блок кода с информацией по первому ДЗ -->
+<table cellspacing="5" cellpadding="10" border="2">
+	<caption><center><b>Домашнее задание № 1 "Подарок от Джона"</b></center></caption>
+	<thead>
+		<tr>
+			<td colspan="2"><center><b>Условие задачи</b></center></td>
+		</tr>
+	</thead>
+
+	<thead>
+		<tr>
+			<td colspan="2">У
+				 Николая есть друг Джон, который живет в Америке. Николай увлекается старинными вещами, поэтому Джон подарил ему градусник со шкалой Фаренгейта.<br>
+                Чтобы проверить точность градусника, напишите программу, которая переведет градусы Фаренгейта в градусы Цельсия с помощью формулы:<br>
+				<br>
+				<img src="https://cdn-user36618.skyeng.ru/skyconvert/unsafe/fit-in/1368x/https://cdn-user12724.skyeng.ru/image/ebe63439b9166f39a2d3a59aef5ade42.png" /><br>
+				<br>
+				Составьте алгоритм, который:<br>
+				- Получает температуру в Фаренгейтах;<br>
+				- Переводит ее в градусы Цельсия;<br>
+				- Выводит вычисленное значение.<br>
+
+			</td>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td>
+
+				<br>
+				#Программный код для решения этой задачи (в упрощённом виде)<br>
+				<br>
+				tempF = int(input())<br>
+				tempC = (tempF - 32) * 5 / 9<br>
+				print(tempC)<br>
+				<br>
+
+			</td>
+			<td>
+
+				<center><img src="{{ url_for('static', filename='/images/1_подарок_от_джона.png') }}" /></center>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+				{% if temperatureC %}
+				<p>Температура в Цельсиях: {{ temperatureC }}</p>
+				{% endif %}
+				{% if error_message1 %}
+    				{{ error_message1 }}
+				{% endif %}
+
+			</td>
+			<td>
+
+				<form action="/" method="post">
+					<input type="hidden" name="form_type" value="form1">
+					<label for="temperatureF">Введите температуру в Фаренгейтах:</label>
+					<input type="text" name="temperatureF" id="temperatureF">
+					<input type="submit" value="Перевести в Цельсии">
+				</form>
+
+			</td>
+		</tr>
+	</tbody>	
+</table>
+
+<! -- Блок кода с информацией по второму ДЗ -->
+<table cellspacing="5" cellpadding="10" border="2">
+	<caption><center><b>Домашнее задание № 2 "Поездка в Италию"</b></center></caption>
+	<thead>
+		<tr>
+			<td colspan="2"><center><b>Условие задачи</b></center></td>
+		</tr>
+	</thead>
+
+	<thead>
+		<tr>
+			<td colspan="2">
+
+				Светлана каждый месяц откладывала деньги на банковский счет, открытый в долларах. Для поездки в Рим она решила узнать, сколько накопила денег в евро.<br>
+				К сожалению, Светлана знает только курс для перевода:<br>
+                - из долларов в рубли: 1 $ = 70,38 ₽<br>
+				- из рублей в евро: 100 ₽ = 1,22 €<br>
+				<br>
+				Составьте алгоритм, который:<br>
+				- Получает сумму в долларах;<br>
+				- Переводит ее в рубли;<br>
+				- Переводит рубли в евро;<br>
+				- Выводит полученную сумму.<br>
+
+			</td>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td>
+
+				<br>
+				#Программный код для решения этой задачи (в упрощённом виде)<br>
+				<br>
+				money_usd = int(input())<br>
+				money_rub = money_usd * 70.38<br>
+				money_eur = money_rub / 100<br>
+				print(money_eur)<br>
+				<br>
+
+			</td>
+			<td>
+
+				<center><img src="{{ url_for('static', filename='/images/2_поездка_в_италию.png') }}" /></center>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+				{% if money_eur %}
+				<p>Сумма в евро: {{ money_eur }}</p>
+				{% endif %}
+				{% if error_message2 %}
+    				{{ error_message2 }}
+				{% endif %}
+
+			</td>
+			<td>
+
+				<!-- Форма 2 -->
+				<form action="/" method="post">
+					<input type="hidden" name="form_type" value="form2">
+					<label for="money_usd">Введите сумму в долларах:</label>
+					<input type="text" name="money_usd" id="money_usd">
+					<input type="submit" value="Перевести в евро">
+				</form>
+
+			</td>
+		</tr>
+	</tbody>	
+</table>
+
+<! -- Блок кода с информацией по третьему ДЗ -->
+<table cellspacing="5" cellpadding="10" border="2">
+	<caption><center><b>Домашнее задание 3. Неужели дождь</b></center></caption>
+	<thead>
+		<tr>
+			<td colspan="2"><center><b>Условие задачи</b></center></td>
+		</tr>
+	</thead>
+
+	<thead>
+		<tr>
+			<td colspan="2">
+
+				Виктор живет в Санкт-Петербурге и каждый день перед работой смотрит прогноз погоды на день.<br>
+				Если метеорологи обещают солнечный день, он берет с собой очки, если нет — зонт.<br>
+                <br>
+				Составьте алгоритм, который:<br>
+				- Спрашивает: «Какая сегодня погода?»<br>
+				- Если ввести «Солнечная», выводит сообщение: «Возьми с собой очки».<br>
+				- В противном случае выводит сообщение: «Возьми с собой зонт».<br>
+				- Перед завершением работы выводит сообщение: «Хорошего дня!»<br>
+			</td>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td>
+				<p>
+				#Программный код для решения этой задачи (в упрощённом виде)<br>
+				<br>
+				print("Какая сейчас погода?")<br>
+				status_weather = input()<br>
+				if status_weather=="солнечная":<br>
+				⠀⠀⠀⠀print("Возьми с собой очки.")<br>
+				else:<br>
+				⠀⠀⠀⠀print(Возьми с собой зонт.)<br>
+				print("Хорошего дня!"")<br>
+			</td>
+			<td>
+
+				<center><img src="{{ url_for('static', filename='/images/3_неужели_дождь.png') }}" /></center>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+				{% if recommendation %}
+					<p>{{ recommendation }}</p>
+				{% endif %}
+				{% if error_message3 %}
+    				{{ error_message3 }}
+				{% endif %}
+
+			</td>
+			<td>
+
+				<!-- Форма 3 -->
+				<form action="/" method="post">
+					<input type="hidden" name="form_type" value="form3">
+					<label for="status_weather">Введите погоду на улице</label>
+					<input type="text" name="status_weather" id="status_weather">
+					<input type="submit" value="Узнать рекомендацию">
+				</form>
+
+			</td>
+		</tr>
+	</tbody>	
+</table>
+
+<! -- Блок кода с информацией по четвёртому ДЗ -->
+<table cellspacing="5" cellpadding="10" border="2">
+	<caption><center><b>Домашнее задание № 4 "Новый велосипед"</b></center></caption>
+	<thead>
+		<tr>
+			<td colspan="2"><center><b>Условие задачи</b></center></td>
+		</tr>
+	</thead>
+
+	<thead>
+		<tr>
+			<td colspan="2">
+
+				Для покупки велосипеда у Виктора не хватало денег, поэтому он решил откладывать понемногу в течение всего года. Чтобы подсчитать, сколько средств он положил в копилку, Виктору необходимо написать программу, которая каждый месяц запрашивает сумму, отложенную на покупку в этом месяце, и в конце года выводит общий итог.<br>
+				Виктор всегда начинает копить деньги с первого месяца. В самом начале в копилке всегда 0 рублей.:<br>
+                Составьте алгоритм, который:<br>
+				- Ежемесячно запрашивает сумму, которую отложил пользователь в копилку<br>
+				- Добавляет ее к сумме в копилке.<br>
+				- Через 12 месяцев выводит общую сумму накопления.<br>
+			</td>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td>
+
+				<br>
+				#Программный код для решения этой задачи (в упрощённом виде)<br>
+				<br>
+				month = 0<br>
+				counter_money = 0<br>
+				for i in range(12):<br>
+				⠀⠀⠀⠀print("Какую сумму хотим положить?")<br>
+				⠀⠀⠀⠀money=int(input())<br>
+				⠀⠀⠀⠀counter_money+=money<br>
+				⠀⠀⠀⠀month+=month<br>
+				print(counter_money)<br>
+				<br>
+
+			</td>
+			<td>
+
+				<center><img src="{{ url_for('static', filename='/images/4_новый_велосипед.png') }}" /></center>
+
+			</td>
+		</tr>
+		<thead>
+			<tr>
+				<td colspan="2"><center><b>Тут я не придумал как можно решить задачу именно по такому алгоритму в веб-приложении=((<br>
+					Можно вводить значение через запятую в одну строку, чтобы потом через список посчитать сумму, но это не то...
+				</b></center></td>
+			</tr>
+		</thead>
+	</tbody>	
+</table>
+
+
+<! -- Блок кода с информацией по третьему ДЗ -->
+<table cellspacing="5" cellpadding="10" border="2">
+	<caption><center><b>Домашнее задание 5. Учим английский</b></center></caption>
+	<thead>
+		<tr>
+			<td colspan="2"><center><b>Условие задачи</b></center></td>
+		</tr>
+	</thead>
+
+	<thead>
+		<tr>
+			<td colspan="2">
+
+				В первом курсе вам предстоит разработать на Python консольное приложение для обучения английскому. Ваша программа по очереди отображает предложения и просит вписать пропущенное слово.<br>
+				Сперва программа здоровается и предлагает начать:<br>
+                <br>
+				Привет! Предлагаю проверить свои знания английского! 
+				Набери "ready", чтобы начать!<br>
+				<br>
+				Если пользователь набрал ready, на экране отображается первое задание. Если нет — повторяется приветствие.<br>
+				<br>
+				В самой простой версии заданий всего три:<br>
+				1. Задание: My name ___ Vova<br>
+				Верный ответ: is<br>
+				2. Задание: I ___ a coder<br>
+				Верный ответ: am<br>
+				3. Задание: I live ___ Moscow<br>
+				Верный ответ: in<br>
+			</td>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td>
+				<p>
+				#Программный код для решения этой задачи (в упрощённом виде)<br>
+				<br>
+				status=""<br>
+				while status.strip().lower() != 'ready':<br>
+				⠀⠀⠀⠀print("Привет! Предлагаю проверить свои знания английского!")<br>
+				⠀⠀⠀⠀status = input("Набери 'ready', чтобы начать: ")<br>
+					<br>
+				questions = [<br>
+				⠀⠀⠀⠀{"sentence": "My name ___ Vova", "answer": "is"},<br>
+				⠀⠀⠀⠀{"sentence": "I ___ a coder", "answer": "am"},<br>
+				⠀⠀⠀⠀{"sentence": "I live ___ Moscow", "answer": "in"}<br>
+				⠀⠀⠀⠀]<br>
+				⠀⠀⠀⠀<br>
+				correct_answers = 0<br>
+				<br>
+				for question in questions:<br>
+				⠀⠀⠀⠀sentence = question["sentence"]<br>
+				⠀⠀⠀⠀answer = question["answer"]<br>
+				⠀⠀⠀⠀print("Задание:", sentence)<br>
+				⠀⠀⠀⠀user_answer = input("Ваш ответ: ")<br>
+				⠀⠀⠀⠀if user_answer.strip().lower() == answer:<br>
+				⠀⠀⠀⠀⠀⠀⠀⠀print("Ответ верный!")<br>
+				⠀⠀⠀⠀⠀⠀⠀⠀correct_answers += 1<br>
+				⠀⠀⠀⠀else:<br>
+				⠀⠀⠀⠀⠀⠀⠀⠀print(f"Неправильно. Правильный ответ: {answer}")<br>
+				<br>
+				total_questions = len(questions)<br>
+				percentage_correct = (correct_answers / total_questions) * 100<br>
+				<br>
+				print(f"Вот и всё! Вы ответили на {correct_answers} вопросов из {total_questions} верно, это {percentage_correct:.2f} процентов.")<br>
+			</td>
+			<td>
+
+				<center><img src="{{ url_for('static', filename='/images/5_учим_английский.png') }}" /></center>
+
+			</td>
+		</tr>
+		<thead>
+			<tr>
+				<td colspan="2"><center><b>Тут я тоже не придумал как можно решить задачу именно по такому алгоритму в веб-приложении=((<br>
+					Зато есть к чему стремиться))
+				</b></center></td>
+			</tr>
+		</thead>
+	</tbody>	
+</table>
